@@ -1,6 +1,8 @@
 import praw
 from praw import Reddit
 import sys
+import pandas as pd
+from utils.constants import POST_FIELD
 
 def connect_reddit(client_id, secret_key, user_agent) -> Reddit:
     try:
@@ -17,7 +19,28 @@ def extract_post(reddit_instance: Reddit, subreddit: str, time_filter: str, limi
     subreddit = reddit_instance.subreddit(subreddit)
     posts = subreddit.top(time_filter =time_filter, limit=limit)
     
-    print(posts)
+    post_list = []
+    
+    for post in posts:
+        post_dict = vars(post)
+        post = {key: post_dict[key] for key in POST_FIELD}
+        post_list.append(post)
+
+    return post_list
+
+def transform_data(post_df: pd.DataFrame):
+    post_df['author_fullname'] = post_df['author_fullname'].astype(str)
+    post_df['score'] = post_df['score'].astype(int)
+    post_df['title'] = post_df['title'].astype(str)
+    post_df['num_comments'] = post_df['num_comments'].astype(int)
+    post_df['created'] = pd.to_datetime(post_df['created'], unit='s')
+    
+    return post_df
+
+def load_to_csv(post_df: pd.DataFrame, pathfile: str):
+    post_df.to_csv(pathfile, index = False)
+
+
 
 
         
