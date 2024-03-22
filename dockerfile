@@ -4,6 +4,8 @@ FROM apache/airflow:2.8.1
 # Install praw library
 RUN pip install praw
 
+RUN pip install s3fs
+
 # Copy environment variables from docker-compose
 ENV AIRFLOW__CORE__EXECUTOR CeleryExecutor
 ENV AIRFLOW__DATABASE__SQL_ALCHEMY_CONN postgresql+psycopg2://airflow:airflow@postgres/airflow
