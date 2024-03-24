@@ -33,7 +33,7 @@ This pipeline utilizes a comprehensive set of tools and services, incorporating 
 
 Instruction link: https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
 
-**Congigure AWS Service**
+**Configure AWS Service**
 
 Instruction for setting up AWS S3, AWS Glue, AWS Athena, and Amazon Redshift.
 Guidlines for securing and configuring AWS environment and necessary permission for IAM roles.
