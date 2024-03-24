@@ -11,6 +11,9 @@ This pipeline utilizes a comprehensive set of tools and services, incorporating 
 - Access AWS end-user interface to process steps involved using cloud service.
 
 ###  **System Architecture**
+
+![image](https://github.com/embiekhochiu/reddit_de/assets/150108017/ace3efe8-62bb-4e62-82fe-c62dbd594ddb)
+
 - Reddit API: Source of the data.
 - Apache Airflow & Celery: Orchestrates the ETL process and manages task distribution.
 - PostgreSQL: Temporary storage.
