@@ -69,7 +69,7 @@ Link: https://docs.aws.amazon.com/
     [etl_settings]
     batch_size = 100
     error_handling = abort
-    log_level = info```
+    log_level = info ```
 
 - Install all the dependencies used in source code, using the below command in terminal
   `pip install + [package_name]`
