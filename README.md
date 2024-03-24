@@ -72,13 +72,17 @@ Link: https://docs.aws.amazon.com/
     log_level = info ```
 
 - Install all the dependencies used in source code, using the below command in terminal
+  
   `pip install + [package_name]`
 
 - Build image from dockerfile and start the container by typing in the terminal
+  
   ` docker build`
+  
   ` docker-compose up -d`
 
 - Launch the Airflow web user interface by accessing Docker Desktop or using this command
+  
   ` open http://localhost:8080`
     
        
